@@ -1,0 +1,1 @@
+•	Smart Home Automation System using Arduino for real-time environmental monitoring and control.Integrated motion detection, temperature/humidity sensing, automated lighting, fan control, and intrusion alerts.Employed modular code with DHT, SD, Servo, and I2C LCD libraries to enable responsive, data-logged automation.
