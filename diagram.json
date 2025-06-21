@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -0.6, "attrs": {} },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": 119.2, "left": 290.22, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -191.7,
+      "left": 321,
+      "attrs": { "temperature": "-13.5", "humidity": "76" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -208.8,
+      "left": 155.4,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -118.8,
+      "left": 138.2,
+      "attrs": { "color": "red" }
+    },
+    { "type": "wokwi-microsd-card", "id": "sd1", "top": 67.43, "left": -124.73, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": 38.6, "left": 345.6, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -320,
+      "left": 418.4,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 291.2,
+      "left": -104.8,
+      "attrs": {}
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": -155.6, "left": 556.8, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -157.2,
+      "left": 675.8,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 255.6,
+      "left": -149.8,
+      "attrs": { "color": "purple" }
+    }
+  ],
+  "connections": [
+    [ "pir1:VCC", "uno:5V", "red", [ "v19.2", "h0", "v0", "h-163.2", "v0" ] ],
+    [ "pir1:GND", "uno:GND.3", "black", [ "v28.8", "h-0.26" ] ],
+    [
+      "pir1:OUT",
+      "uno:2",
+      "green",
+      [ "v19.2", "h-0.14", "v19.2", "h-48", "v0", "h0", "v0", "h-57.6", "v-268.8" ]
+    ],
+    [ "relay1:IN", "uno:5", "green", [ "h-67.2", "v-38.6", "h-9.6", "v-86.4", "h-57.6", "v48" ] ],
+    [ "relay1:VCC", "uno:5V", "red", [ "h-48", "v38.4", "h-19.2", "v105.6", "h9.6" ] ],
+    [ "relay1:GND", "uno:GND.3", "black", [ "h-28.8", "v38", "h-28.8", "v105.6", "h-115.2" ] ],
+    [ "sd1:GND", "uno:GND.1", "black", [ "h38.4", "v0.11", "h0", "v-134.4", "h105.6" ] ],
+    [ "sd1:VCC", "uno:5V", "red", [ "h48", "v19.34", "h9.6", "v124.8", "h153.6" ] ],
+    [ "sd1:CS", "uno:10", "green", [ "h28.8", "v-201.54", "h172.8", "v76.8" ] ],
+    [ "sd1:SCK", "uno:13", "green", [ "h48", "v-124.81", "h124.8", "v0", "h0" ] ],
+    [ "sd1:DI", "uno:11", "green", [ "h19.2", "v-172.89", "h172.8" ] ],
+    [ "sd1:DO", "uno:12", "green", [ "h9.6", "v0.11", "h0", "v-144", "h0", "v0", "h163.2" ] ],
+    [ "dht1:VCC", "uno:5V", "red", [ "v105.6", "h19.2", "v0", "h134.4", "v259.2", "h-326.4" ] ],
+    [ "dht1:GND", "uno:GND.3", "black", [ "v96", "h105.6", "v249.6", "h-288" ] ],
+    [ "dht1:SDA", "uno:4", "green", [ "v38.4", "h-124.7" ] ],
+    [ "led1:C", "uno:GND.1", "green", [ "v0", "h-47.6" ] ],
+    [ "led1:A", "uno:7", "green", [ "v38.4", "h19.2" ] ],
+    [ "bz1:1", "uno:GND.1", "green", [ "v9.6", "h-76.8" ] ],
+    [ "bz1:2", "uno:6", "green", [ "v0" ] ],
+    [ "lcd1:GND", "uno:GND.1", "black", [ "h-326.4", "v48" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h-556.8", "v508.9", "h19.2" ] ],
+    [ "lcd1:SDA", "uno:A4", "green", [ "h-38.4", "v259.4", "h144", "v297.6", "h-282.6" ] ],
+    [ "lcd1:SCL", "uno:A5", "green", [ "h-28.8", "v240.3", "h115.2", "v345.6", "h-240" ] ],
+    [ "ldr1:VCC", "uno:5V", "red", [ "h96", "v-19.2" ] ],
+    [ "ldr1:GND", "uno:GND.3", "black", [ "h0" ] ],
+    [ "ldr1:AO", "uno:A0", "green", [ "h0" ] ],
+    [ "servo1:V+", "uno:5V", "green", [ "h-19.2", "v0.1", "h0", "v451.2", "h0" ] ],
+    [ "servo1:GND", "uno:GND.1", "black", [ "h-278.4", "v0", "h-163.2" ] ],
+    [ "servo1:PWM", "uno:8", "green", [ "h-384", "v96.2" ] ],
+    [ "led2:A", "uno:3", "green", [ "v86.4", "h0" ] ],
+    [ "led2:C", "uno:GND.1", "green", [ "v57.6", "h-316.4", "v0", "h-259.2" ] ],
+    [
+      "led3:A",
+      "uno:9",
+      "green",
+      [ "v38.4", "h9.6", "v-144", "h-38.4", "v-220.8", "h316.8", "v38.4" ]
+    ],
+    [ "led3:C", "uno:GND.2", "green", [ "v57.6", "h269.2", "v0", "h0", "v-144", "h38.4" ] ]
+  ],
+  "dependencies": {}
+}
